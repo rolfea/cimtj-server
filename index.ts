@@ -20,11 +20,17 @@ app.get('/', async (req: Request, res: Response) => {
       body: JSON.stringify({
         comment: { text: jokeText },
         languages: ['en'],
-        requestedAttributes: { TOXICITY: {} },
+        requestedAttributes: {
+          TOXICITY: {},
+          SEVERE_TOXICITY: {},
+          IDENTITY_ATTACK: {},
+          INSULT: {},
+          PROFANITY: {},
+          THREAT: {},
+        },
       }),
     })
   ).json();
-
   res.header('Access-Control-Allow-Origin', '*');
   res.send(results);
 });

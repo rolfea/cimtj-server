@@ -31,7 +31,6 @@ app.get('/', async (req: Request, res: Response) => {
       }),
     })
   ).json();
-  console.log('results is: ', results);
   res.header('Access-Control-Allow-Origin', '*');
   res.send(results);
 });
